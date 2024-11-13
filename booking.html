@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your driving lesson or send us an enquiry for more information.">
+    <link rel="stylesheet" href="style.css">
+    <title>Booking/Enquiries - Driving Lessons in Gorey</title>
+</head>
+<body>
+
+<header>
+    <h1>Book a Lesson or Enquire</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="booking.html">Booking/Enquiries</a>
+</nav>
+
+<div class="container">
+    <h2>Booking/Enquiry Form</h2>
+    <p>Fill out the form below to book a lesson or send an enquiry. We will contact you as soon as possible!</p>
+    
+    <form name="booking" method="POST" data-netlify="true">
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- Email Field -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Phone Number Field -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter 10-digit phone number">
+
+        <!-- Preferred Start Date Field -->
+        <label for="start_date">Preferred Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+
+        <!-- Inquiry Message Field -->
+        <label for="message">Further Inquiry (Optional):</label>
+        <textarea id="message" name="message" rows="4" placeholder="Add any additional details or questions here"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2023 Driving Lessons in Gorey</p>
+</footer>
+
+</body>
+</html>
