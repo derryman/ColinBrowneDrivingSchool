@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Colin Browne Driving School</title>
+    <title>Contact Us - Colin Browne Driving School</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -16,35 +16,106 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <section class="contact">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <form action="https://formsubmit.co/colinbrownedrivingschool@gmail.com" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="query">Your Query:</label>
-                <textarea id="query" name="query" rows="5" required></textarea>
-                <button type="submit">Submit</button>
+    <div class="contact-container">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Query:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message here"></textarea>
+                </div>
+                <button class="btn" type="submit">Submit</button>
             </form>
         </div>
-    </section>
+    
+        <!-- Social Links and Contact Info -->
+        <div class="social-box">
+            <h2>Connect With Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank">
+                    <img src="images/facebook.jpg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank">
+                    <img src="images/instagram.jpg" alt="Instagram">
+                </a>
+            </div>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> <a href="tel:0872271023">087 227 1023</a></p>
+                <p><strong>Email:</strong> <a href="mailto:colinbrownedrivingschool@gmail.com">colinbrownedrivingschool@gmail.com</a></p>
+            </div>
+            <div class="rsa-pic">
+                <img src="images/rsa.png" alt="RSA">
+            </div>
+        </div>
+    </div>
+    
     <footer>
-        <div class="container">
+        <div class="footer-container">
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <p>Phone: <a href="tel:0872271023">087 227 1023</a></p>
+                <p>Email: <a href="mailto:colinbrownedrivingschool@gmail.com">colinbrownedrivingschool@gmail.com</a></p>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="footer-info">
+                <p>Follow us:</p>
+                <p>
+                    <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank">Facebook</a> |
+                    <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank">Instagram</a>
+                </p>
+            </div>
+            
+            <!-- Location -->
+            <div class="footer-location">
+                <p>Find us here:</p>
+                <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank">
+                    Gorey, County Wexford
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
             <p>&copy; 2024 Colin Browne Driving School</p>
-            <p>Follow us: 
-                <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank">Facebook</a>, 
-                <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank">Instagram</a>.
-            </p>
         </div>
     </footer>
 </body>
 </html>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS with your Public Key
+    emailjs.init("287R6WVwf5qdMytt9"); // Replace with your Public Key
+
+    // Handle form submission
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Send the form data using EmailJS
+        emailjs.sendForm("service_bddpsc8", "template_drcyrvb", this)
+            .then(function () {
+                // Redirect to Thank You page on success
+                window.location.href = "thank-you.html";
+            }, function (error) {
+                // Show an alert if there's an error
+                alert("Failed to send message: " + error.text);
+            });
+    });
+</script>
