@@ -12,7 +12,8 @@
             <div class="logo">
                 <h1>Colin Browne Driving School</h1>
             </div>
-            <nav>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu"><span class="bar"></span></button>
+            <nav class="primary-nav" id="primary-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
@@ -59,7 +60,7 @@
         </iframe>
         <!-- Clickable link -->
         <p>
-            <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank" style="font-size: 1.2rem; color: #008000; text-decoration: none; font-weight: bold;">
+            <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank" rel="noopener noreferrer" style="font-size: 1.2rem; color: #008000; text-decoration: none; font-weight: bold;">
                 Open in Google Maps
             </a>
         </p>
@@ -76,15 +77,15 @@
             <div class="footer-info">
                 <p>Follow us:</p>
                 <p>
-                    <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank">Facebook</a> |
-                    <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank" rel="noopener noreferrer">Facebook</a> |
+                    <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </p>
             </div>
             
             <!-- Location -->
             <div class="footer-location">
                 <p>Find us here:</p>
-                <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank">
+                <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank" rel="noopener noreferrer">
                     Gorey, County Wexford
                 </a>
             </div>
@@ -94,5 +95,17 @@
         </div>
     </footer>
     
+    <script>
+        (function(){
+            var toggle = document.querySelector('.menu-toggle');
+            var nav = document.getElementById('primary-nav');
+            if(toggle && nav){
+                toggle.addEventListener('click', function(){
+                    var isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

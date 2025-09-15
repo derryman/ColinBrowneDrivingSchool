@@ -12,7 +12,8 @@
             <div class="logo">
                 <h1>Colin Browne Driving School</h1>
             </div>
-            <nav>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu"><span class="bar"></span></button>
+            <nav class="primary-nav" id="primary-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -51,10 +52,10 @@
         <div class="social-box">
             <h2>Connect With Us</h2>
             <div class="social-icons">
-                <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank">
+                <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank" rel="noopener noreferrer">
                     <img src="images/facebook.jpg" alt="Facebook">
                 </a>
-                <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank">
+                <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank" rel="noopener noreferrer">
                     <img src="images/instagram.jpg" alt="Instagram">
                 </a>
             </div>
@@ -64,10 +65,12 @@
             </div>
             <div class="rsa-pic">
                 <h2>View RSA and NDLS Sites Below</h2>
-                <a href="https://www.rsa.ie/services" target="_blank">
+                <a href="https://www.rsa.ie/services" target="_blank" rel="noopener noreferrer">
                     <img src="images/rsa.png" alt="RSA">
-                <a href="https://www.ndls.ie/" target="_blank">
+                </a>
+                <a href="https://www.ndls.ie/" target="_blank" rel="noopener noreferrer">
                     <img src="images/ndlslogo.webp" alt="NDLS">
+                </a>
             </div>
         </div>
     </div>
@@ -84,15 +87,15 @@
             <div class="footer-info">
                 <p>Follow us:</p>
                 <p>
-                    <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank">Facebook</a> |
-                    <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/ColinBrowneDrivingSchool" target="_blank" rel="noopener noreferrer">Facebook</a> |
+                    <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </p>
             </div>
             
             <!-- Location -->
             <div class="footer-location">
                 <p>Find us here:</p>
-                <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank">
+                <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank" rel="noopener noreferrer">
                     Gorey, County Wexford
                 </a>
             </div>
@@ -101,25 +104,28 @@
             <p>&copy; 2024 Colin Browne Driving School</p>
         </div>
     </footer>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            var toggle = document.querySelector('.menu-toggle');
+            var nav = document.getElementById('primary-nav');
+            if(toggle && nav){
+                toggle.addEventListener('click', function(){
+                    var isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+        })();
+        emailjs.init("287R6WVwf5qdMytt9");
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            emailjs.sendForm("service_bddpsc8", "template_drcyrvb", this)
+                .then(function () {
+                    window.location.href = "thank-you.html";
+                }, function (error) {
+                    alert("Failed to send message: " + error.text);
+                });
+        });
+    </script>
 </body>
 </html>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    // Initialize EmailJS with your Public Key
-    emailjs.init("287R6WVwf5qdMytt9"); // Replace with your Public Key
-
-    // Handle form submission
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission behavior
-
-        // Send the form data using EmailJS
-        emailjs.sendForm("service_bddpsc8", "template_drcyrvb", this)
-            .then(function () {
-                // Redirect to Thank You page on success
-                window.location.href = "thank-you.html";
-            }, function (error) {
-                // Show an alert if there's an error
-                alert("Failed to send message: " + error.text);
-            });
-    });
-</script>
