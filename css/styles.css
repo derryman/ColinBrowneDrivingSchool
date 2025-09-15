@@ -269,7 +269,8 @@ img {
     .menu-toggle .bar::after { top: 6px; }
 
     .primary-nav { width: 100%; }
-    .primary-nav ul {
+    /* Hide menu by default on mobile with higher specificity */
+    .main-header .primary-nav ul {
         display: none;
         flex-direction: column;
         gap: 0;
@@ -283,9 +284,9 @@ img {
         box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         z-index: 20;
     }
-    .primary-nav ul li { margin-left: 0; border-top: 1px solid rgba(255,255,255,0.2); }
-    .primary-nav ul li a { display: block; padding: 0.9rem 0.75rem; }
-    .primary-nav.open ul { display: flex; }
+    .main-header .primary-nav ul li { margin-left: 0; border-top: 1px solid rgba(255,255,255,0.2); }
+    .main-header .primary-nav ul li a { display: block; padding: 0.9rem 0.75rem; }
+    .main-header .primary-nav.open ul { display: flex; }
 }
 
 /* Hero Section */
