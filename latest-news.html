@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Colin Browne Driving School</title>
+    <title>Latest News - Colin Browne Driving School</title>
     <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
@@ -16,65 +16,33 @@
             <nav class="primary-nav" id="primary-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="latest-news.html">Latest News</a></li>
+                    <li><a href="latest-news.html" class="active">Latest News</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <section class="about">
-        <div class="container">
-            <h1>About Colin Browne</h1>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/image1.jpg" alt="Colin Browne Driving School">
-                </div>
-                <div class="about-text">
-                    <p>
-                        Welcome to Colin Browne Driving School! I am an RSA-approved instructor 
-                        (ADI No. 42825), committed to helping drivers master essential skills 
-                        with confidence and safety in mind.
-                    </p>
-                    <p>
-                        Whether you're a nervous beginner or looking to refine your skills, 
-                        I tailor lessons to suit your needs. With years of experience, my goal 
-                        is to make roads safer by building responsible drivers.
-                    </p>
-                    <p>Let’s make your driving journey safe, confident, and enjoyable!</p>
-                </div>
-            </div>
+
+    <section class="services-section" style="max-width: 1000px;">
+        <h1>Latest News</h1>
+        <p>Updates, tips, and announcements from Colin Browne Driving School.</p>
+
+        <div id="instagram-feed" style="margin-top: 2rem;">
+            <p>Loading Instagram feed...</p>
         </div>
-    </section>
-    <section class="about-map">
-        <h2>Find Us Here</h2>
-        <p>We're conveniently located near Naomh Éanna GAA Club and Practice Real Test Routes Around Gorey.</p>
-        <!-- Embed Google Map -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2418.849239954695!2d-6.277366923455358!3d52.68076017210374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867e667b252b637%3A0x57caf29243771538!2sNaomh%20Eanna%20(Wexford)%20GAA%20Club!5e0!3m2!1sen!2sie!4v1732578896465!5m2!1sen!2sie" 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-        <!-- Clickable link -->
-        <p>
-            <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank" rel="noopener noreferrer" style="font-size: 1.2rem; color: #008000; text-decoration: none; font-weight: bold;">
-                Open in Google Maps
-            </a>
+        <p style="margin-top:1rem; font-size:0.9rem; color:#666;">If the feed does not load, you can visit our Instagram directly:
+            <a href="https://www.instagram.com/colinbrownedrivingschool/" target="_blank" rel="noopener noreferrer">@colinbrownedrivingschool</a>.
         </p>
     </section>
+
     <footer>
         <div class="footer-container">
-            <!-- Contact Information -->
             <div class="footer-contact">
                 <p>Phone: <a href="tel:0872271023">087 227 1023</a></p>
                 <p>Email: <a href="mailto:colinbrownedrivingschool@gmail.com">colinbrownedrivingschool@gmail.com</a></p>
             </div>
-            
-            <!-- Social Media Links -->
             <div class="footer-info">
                 <p>Follow us:</p>
                 <p>
@@ -82,8 +50,6 @@
                     <a href="https://www.instagram.com/ColinBrowneDrivingSchool" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </p>
             </div>
-            
-            <!-- Location -->
             <div class="footer-location">
                 <p>Find us here:</p>
                 <a href="https://maps.app.goo.gl/19Bk6TKmwBe6F4Ni8" target="_blank" rel="noopener noreferrer">
@@ -95,7 +61,7 @@
             <p>&copy; 2024 Colin Browne Driving School</p>
         </div>
     </footer>
-    
+
     <script>
         (function(){
             var toggle = document.querySelector('.menu-toggle');
@@ -107,6 +73,11 @@
                 });
             }
         })();
+
+        // Basic placeholder: If you later use a third-party Instagram widget, init here
+        // For example, ElfSight, LightWidget, or Instafeed.js can be inserted here.
+        // For now, just link to Instagram profile if embed isn't configured.
     </script>
 </body>
 </html>
+
