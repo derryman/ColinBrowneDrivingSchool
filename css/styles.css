@@ -526,6 +526,38 @@ section {
     margin-top: 50px;
 }
 
+/* Instagram Feed Styling */
+#instagram-feed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+#instagram-feed .elfsight-app-f67055b9-b9f4-4272-9401-2553ef581b9d {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Hide Elfsight branding and attribution */
+#instagram-feed [class*="elfsight"] [class*="powered"],
+#instagram-feed [class*="elfsight"] [class*="branding"],
+#instagram-feed [class*="elfsight"] [class*="attribution"],
+#instagram-feed [class*="elfsight"] [class*="watermark"],
+#instagram-feed [class*="elfsight"] [class*="credit"],
+#instagram-feed [class*="elfsight"] a[href*="elfsight"],
+#instagram-feed [class*="elfsight"] a[href*="widget"],
+#instagram-feed [class*="elfsight"] [class*="footer"],
+#instagram-feed [class*="elfsight"] [class*="bottom"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
 /* Footer Styling */
 footer {
     background: #333;
